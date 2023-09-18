@@ -1,0 +1,63 @@
+This is the React Practice and learning that I have from JSM video on React JS FullCourse 2023.
+
+import { useState, useEffect } from 'react';
+import './App.css';
+
+// const Person = (props) => {
+//   return (
+//     <>
+//       <h1>Name: {props.name}</h1>
+//       <h2>Last Name: {props.lastName}</h2>
+//       <h2>Age: {props.age}</h2>
+//     </>
+//   );
+// }
+
+const App = () => {
+  // const name = 'Javascript';
+  // const isNameShowing = false;
+
+  // useState 
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    // counter = 100; // This is forbidden in react as we cannot change the state manually
+    // setCounter(100); 
+    alert("You've changed counter to " + counter);
+  }, [counter]);
+
+  return (
+    <div className="App">
+      <>
+        {/* <h1>Hello, {isNameShowing ? name : 'Someone'}!</h1>
+      {
+        name ? (
+          <>
+            <h1>test passed</h1>
+            <h2>{name}</h2>
+            <h3>or This kind of functionality can be used when to check whether user is loggedIn or not if yes logout button should be diplayed else login button and there are/can be many uses of this.</h3>
+            <Person name={'John'} lastName={'Doe'} age={25} />
+            <Person
+              name="Jane"
+              lastName="Doe"
+              age={23 + 3}
+            />
+            <Person />
+          </>
+        ) : (
+          <>
+            <h1>test failed</h1>
+            <h2>React fragments are used to show more than two elements</h2>
+          </>
+        )
+      } */}
+
+        <button onClick={() => setCounter((prevCount) => prevCount - 1)}>-</button>
+        <h1>{counter}</h1>
+        <button onClick={() => setCounter((prevCount) => prevCount + 1)}>+</button>
+      </>
+    </div>
+  );
+}
+
+export default App;
